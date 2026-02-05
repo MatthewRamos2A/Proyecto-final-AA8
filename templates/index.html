@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control CMC</title>
+</head>
+<body>
+    <h1>Aplicación Control CMC</h1>
+    <p>Análisis climático y comparación de algoritmos de ordenamiento</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Analizar Dataset</button>
+    </form>
+
+    {% if fig %}
+        <h2>Análisis Climático</h2>
+        {{ fig | safe }}
+    {% endif %}
+
+    {% if sort_fig %}
+        <h2>Comparación de Algoritmos de Ordenamiento</h2>
+        {{ sort_fig | safe }}
+    {% endif %}
+
+    {% if stats_table %}
+        <h2>Tabla Estadística Descriptiva (Muestra Reducida)</h2>
+        {{ stats_table | safe }}
+    {% endif %}
+
+    {% if boxplot_fig %}
+        <h2>Boxplot de la Temperatura Máxima</h2>
+        {{ boxplot_fig | safe }}
+    {% endif %}
+</body>
+</html>
